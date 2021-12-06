@@ -1,0 +1,155 @@
+.carousel-item { /*Själva innehållet i carouselerna*/
+  height: 32rem;
+  background: #000;
+  color: white;
+  position: relative;
+} 
+
+
+.container { /*En container för att hålla ihop buttonen, headern och texten*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-bottom: 50px;
+}
+
+.overlay-image { /*"Overlay image" en klass för att få bilden mitt på skärmen så att den täcker hela widthen med en mindre opacity
+                  för att kunna ge texten en highlight*/
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+}
+
+/*Olika headers för att få dem att se olika ut*/
+h2 {
+  color: white;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+h3 {
+  color: white;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 36px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.column { /*Tillåter 4 olika kolumner att sitta brevid varandra*/
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column video { /*Gör alla bilder lika stora för att den får dem att fylla en hel box*/
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  object-fit: fill;
+  height: 250px;
+}
+
+/*Blir skärmen mindre så lägger den istället 2 kolumner brevid varandra*/
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/*Blir skärmen ännu mindre så läggs bilderna på varandra*/
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/*Ger sidan en custom scroll och färg på den*/
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb {
+  background: blueviolet;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.columns2 { /*En ny column för price tablen*/
+  margin-top: 2vh;
+  box-sizing: border-box;
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+}
+
+.price { /*Decoration på pris listan*/
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price .header { /*Färg och storlek på text*/
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+}
+
+.price li { /*Gör borders runt listans div*/
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.price .grey { /*Olika färg så att inte hela listan blir svart*/
+  color: black;
+  background-color: #eee;
+  font-size: 20px;
+}
+
+.button { /*En sign up knapp*/
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) { /*Minskar kolumneras storlek och mindre padding på knappen (mer responsiv)*/
+  .columns {
+    width: 100%;
+  }
+  .button {
+    padding: 3%;
+  }
+}
+/*Gör färgen vit så att man kan se listans text och p för att texten ska kunna synas*/
+li {
+  color: white;
+}
+
+p {
+  color: white;
+}
